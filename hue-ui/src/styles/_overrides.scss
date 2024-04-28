@@ -1,0 +1,16 @@
+@use "@angular/material" as mat;
+
+@import "mixins";
+
+@include mat.form-field-density(-4);
+
+.mat-typography {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}

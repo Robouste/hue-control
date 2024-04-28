@@ -1,0 +1,14 @@
+@use "@angular/material" as mat;
+@use "angular-material-css-vars" as mat-css-vars;
+
+$typography: mat.define-typography-config(
+  $font-family: "Noto Sans, sans-serif",
+);
+
+@include mat-css-vars.init-material-css-vars($typography-config: $typography)
+  using($mat-css-theme) {
+  // If your app has any theme mixins, call them here.
+  // $mat-css-theme gets set to an appropriate value before this content is called.
+  // @include your-custom-component-theme($mat-css-theme);
+  // @debug "mat-css-theme: #{$mat-css-theme}";
+}

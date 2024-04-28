@@ -1,0 +1,15 @@
+@if (device) {
+  <mat-card class="device-card">
+    <div class="device-icon">
+      <hue-icon [icon]="deviceIcon" size="xl" />
+    </div>
+    <div class="device-content">
+      <div class="device-name">
+        {{ device.metadata.name }}
+      </div>
+      <!-- <div class="device-info">
+        {{ device.metadata.archetype }}
+      </div> -->
+    </div>
+  </mat-card>
+}

@@ -12,14 +12,14 @@
       "sourceMaps": true,
       "stopOnEntry": false,
       "console": "integratedTerminal",
-      "cwd": "${workspaceRoot}"
+      "cwd": "${workspaceRoot}\\hue-api"
     },
     {
       "type": "node-terminal",
       "name": "Debug Tests",
       "request": "launch",
       "command": "npm run test",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}\\hue-api"
     }
   ]
 }

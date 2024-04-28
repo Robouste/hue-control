@@ -1,0 +1,29 @@
+<div class="sidebar-header">
+  <a class="app-icon" routerLink="/" matRipple>
+    <hue-icon [icon]="icons.home" />
+  </a>
+  Hue Control
+</div>
+<div class="sidebar-nav">
+  @for (item of menuItems; track item) {
+    <a
+      class="nav-item"
+      [routerLink]="item.route"
+      [queryParams]="item.queryParams"
+      [class.active]="router.url.includes(item.route)"
+    >
+      <hue-icon [icon]="item.icon" />
+      {{ item.label }}
+    </a>
+  }
+</div>
+<!-- <div class="bottom-sidebar-nav">
+    <mat-icon>person</mat-icon>
+    <span class="user-name">{{ user }}</span>
+    <a class="bottom-sidebar-nav-action" routerLink="/settings" routerLinkActive="active" matRipple>
+      <mat-icon>settings</mat-icon>
+    </a>
+    <div class="bottom-sidebar-nav-action" (click)="logout()" matRipple>
+      <mat-icon>power_settings_new</mat-icon>
+    </div>
+  </div> -->

@@ -17,6 +17,11 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "strict": true
+    "strict": true,
+    "paths": {
+      "@common/*": ["../common/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@mappers/*": ["./src/mappers/*"]
+    }
   }
 }

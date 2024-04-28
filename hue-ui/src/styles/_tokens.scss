@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --border-color: rgb(74 82 94);
+  --active-primary-color: var(--palette-primary-900);
+  --background-color: #292f3d;
+  --elements-background-color: #1d2733;
+  --text-color: #dde3e7;
+  --secondary-text-color: #b6bbbf;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Material overrides */
+  .isDarkTheme {
+    --mat-app-background-color: var(--background-color);
+    --mat-app-text-color: var(--text-color);
+    --mdc-elevated-card-container-color: var(--elements-background-color);
+    --mdc-elevated-card-container-shape: var(--radius-md);
+  }
+}

@@ -1,0 +1,7 @@
+<hue-page-title [title]="title" [icon]="icons.devices" />
+
+<div class="device-list">
+  @for (device of devices$ | async; track device) {
+    <hue-device-card [device]="device" />
+  }
+</div>
