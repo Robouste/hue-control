@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { LightStatus } from "@common/dtos";
 import { ObservableQueue } from "@helpers/observable-queue.class";
 import { Observable } from "rxjs";
 
@@ -9,9 +10,9 @@ export class LightService {
 
   constructor(private _http: HttpClient) {}
 
-  public getStatus(serviceId: string): Observable<unknown> {
+  public getStatus(serviceId: string): Observable<LightStatus> {
     return this._queue.add(
-      this._http.get<unknown>(`light-status/${serviceId}`),
+      this._http.get<LightStatus>(`light-status/${serviceId}`),
     );
   }
 }

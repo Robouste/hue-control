@@ -1,7 +1,7 @@
-import { HueHumanName } from "@common/types";
+import { DeviceHumanName } from "@common/types";
 import { AppConstants } from "@core/app.constants";
 
-export const iconMapping: Record<HueHumanName, string> = {
+export const iconMapping: Record<DeviceHumanName, string> = {
   "Gradient Lightstrip": AppConstants.icons.lightstrip,
   "RGB Lightstrip": AppConstants.icons.lightstrip,
   "Small bulb": AppConstants.icons.bulb,

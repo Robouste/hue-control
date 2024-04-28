@@ -1,13 +1,13 @@
-import { HueHumanName, HueProductArchetype } from "../types";
+import { DeviceHumanName, ProductArchetype } from "../types";
 
-export interface HueProductData {
+export interface ProductData {
   modelId: string;
   manufacturerName: string;
   productName: string;
-  productArchetype: HueProductArchetype;
+  productArchetype: ProductArchetype;
   certified: boolean;
   softwareVersion: string;
   hardwarePlatformType?: string;
-  humanName: HueHumanName;
+  humanName: DeviceHumanName;
   price: number;
 }

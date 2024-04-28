@@ -1,4 +1,4 @@
-export interface HueMetadata {
+export interface DeviceMetadata {
   name: string;
   archetype: string;
 }

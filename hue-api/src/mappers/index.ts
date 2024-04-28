@@ -1,3 +1,4 @@
-export * from './hue-device.mapper';
-export * from './hue-product-data.mapper';
-export * from './hue-service.mapper';
+export * from './device-service.mapper';
+export * from './device.mapper';
+export * from './light-status.mapper';
+export * from './product-data.mapper';

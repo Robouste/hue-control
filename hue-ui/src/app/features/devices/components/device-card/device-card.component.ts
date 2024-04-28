@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { MatCardModule } from "@angular/material/card";
-import { HueDevice } from "@common/dtos";
+import { Device } from "@common/dtos";
 import { AppConstants } from "@core/app.constants";
 import { iconMapping } from "@helpers/icons-mapping";
 import { LightService } from "@services/light.service";
@@ -15,9 +15,11 @@ import { IconComponent } from "@ui-kit/icon";
   styleUrl: "./device-card.component.scss",
 })
 export class DeviceCardComponent implements OnInit {
-  @Input({ required: true }) device: HueDevice | undefined;
+  @Input({ required: true }) device: Device | undefined;
 
   protected deviceIcon = AppConstants.icons.unknownDevice;
+  protected lightColor: string | null = null;
+  protected isOn = false;
 
   constructor(private _lightService: LightService) {}
 
@@ -30,14 +32,14 @@ export class DeviceCardComponent implements OnInit {
       );
 
       if (lightService) {
-        this._lightService
-          .getStatus(lightService.rId)
-          .subscribe((status) =>
-            console.log(
-              "status of " + this.device?.productData.humanName,
-              status,
-            ),
-          );
+        this._lightService.getStatus(lightService.rId).subscribe((status) => {
+          console.log("color of " + this.device?.productData.humanName, status);
+          if (status.on.on) {
+            this.lightColor = status.color.rgb;
+          }
+
+          this.isOn = status.on.on;
+        });
       }
     }
   }

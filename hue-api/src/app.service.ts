@@ -1,9 +1,9 @@
-import { HueDevice } from "@common/dtos";
+import { Device, LightStatus } from "@common/dtos";
 import { Inject, Injectable } from "@nestjs/common";
 import { AxiosInstance, AxiosResponse } from "axios";
 import { ApiConstants } from "./api.constants";
-import { HueDeviceEntity } from "./entities";
-import { HueDeviceMapper } from "./mappers";
+import { DeviceEntity, LightStatusEntity } from "./entities";
+import { DeviceMapper, LightStatusMapper } from "./mappers";
 
 @Injectable()
 export class AppService {
@@ -11,13 +11,13 @@ export class AppService {
     @Inject(ApiConstants.axiosInjectionToken) private _axios: AxiosInstance,
   ) {}
 
-  public async getDevices(): Promise<HueDevice[]> {
+  public async getDevices(): Promise<Device[]> {
     try {
-      const result: AxiosResponse<{ data: HueDeviceEntity[] }> =
+      const result: AxiosResponse<{ data: DeviceEntity[] }> =
         await this._axios.get(`/clip/v2/resource/device`);
 
-      return result.data.data.map((device: HueDeviceEntity) =>
-        HueDeviceMapper.toDto(device),
+      return result.data.data.map((device: DeviceEntity) =>
+        DeviceMapper.toDto(device),
       );
     } catch (e) {
       console.error(e);
@@ -38,11 +38,12 @@ export class AppService {
     return result.data;
   }
 
-  public async getLightStatus(serviceId: string): Promise<unknown> {
-    const result = await this._axios.get(
-      `/clip/v2/resource/light/${serviceId}`,
-    );
+  public async getLightStatus(serviceId: string): Promise<LightStatus> {
+    const result: AxiosResponse<{ data: LightStatusEntity[] }> =
+      await this._axios.get(`/clip/v2/resource/light/${serviceId}`);
 
-    return result.data;
+    return result.data.data
+      .map((status) => LightStatusMapper.toDto(status))
+      .at(0);
   }
 }

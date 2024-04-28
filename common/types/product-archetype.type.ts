@@ -7,7 +7,7 @@
  * floor_shade => Vertical light
  */
 
-export type HueProductArchetype =
+export type ProductArchetype =
   | "hue_lightstrip"
   | "candle_bulb"
   | "sultan_bulb"

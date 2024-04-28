@@ -1,4 +1,4 @@
-export interface HueService {
+export interface DeviceService {
   rId: string;
   rType: string;
 }

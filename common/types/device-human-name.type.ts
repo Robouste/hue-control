@@ -1,4 +1,4 @@
-export type HueHumanName =
+export type DeviceHumanName =
   | "Gradient Lightstrip"
   | "RGB Lightstrip"
   | "Small bulb"

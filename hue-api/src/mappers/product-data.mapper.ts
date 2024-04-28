@@ -1,11 +1,11 @@
-import { HueProductData } from "@common/dtos";
-import { HueHumanName } from "@common/types";
-import { HueProductDataEntity } from "@entities/hue-product-data.entity";
+import { ProductData } from "@common/dtos";
+import { DeviceHumanName } from "@common/types";
+import { ProductDataEntity } from "@entities/product-data.entity";
 
-export class HueProductDataMapper {
-  public static toDto(entity: HueProductDataEntity): HueProductData {
+export class ProductDataMapper {
+  public static toDto(entity: ProductDataEntity): ProductData {
     const humanName =
-      HueProductDataMapper.modelIdToNameMapping[entity.model_id] || "Unknown";
+      ProductDataMapper.modelIdToNameMapping[entity.model_id] || "Unknown";
     return {
       modelId: entity.model_id,
       manufacturerName: entity.manufacturer_name,
@@ -15,11 +15,11 @@ export class HueProductDataMapper {
       softwareVersion: entity.software_version,
       hardwarePlatformType: entity.hardware_platform_type,
       humanName,
-      price: HueProductDataMapper.priceMapping[humanName],
+      price: ProductDataMapper.priceMapping[humanName],
     };
   }
 
-  public static modelIdToNameMapping: Record<string, HueHumanName> = {
+  public static modelIdToNameMapping: Record<string, DeviceHumanName> = {
     LCX004: "Gradient Lightstrip",
     LCL001: "RGB Lightstrip",
     LCE002: "Small bulb",
@@ -32,7 +32,7 @@ export class HueProductDataMapper {
     "4080248P9": "Hue Floor",
   };
 
-  public static priceMapping: Record<HueHumanName, number> = {
+  public static priceMapping: Record<DeviceHumanName, number> = {
     "Big bulb": 65,
     "Small bulb": 20,
     "Motion sensor": 45,
