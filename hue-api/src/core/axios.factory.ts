@@ -10,7 +10,7 @@ export const axiosFactory: Provider = {
   provide: ApiConstants.axiosInjectionToken,
   useFactory: (configService: ConfigService) => {
     // get certifacate from https://developers.meethue.com/develop/application-design-guidance/using-https/
-    // or run this command from linux: openssl s_client -showcerts -connect <bridge-ip>:443 and get stuff from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- (inclusive)
+    // or run this command from linux: `openssl s_client -showcerts -connect <bridge-ip>:443` and get stuff from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- (inclusive)
     const ca = readFileSync("bridge-cert.pem");
     const hueBridgeIp = configService.get<string>("HUE_BRIDGE_IP");
     const hueBridgeId = configService.get<string>("HUE_BRIDGE_ID");

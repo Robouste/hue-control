@@ -30,14 +30,14 @@ export class DeviceCardComponent implements OnInit {
       );
 
       if (lightService) {
-        // this._lightService
-        //   .getStatus(lightService.rId)
-        //   .subscribe((status) =>
-        //     console.log(
-        //       "status of " + this.device?.productData.humanName,
-        //       status,
-        //     ),
-        //   );
+        this._lightService
+          .getStatus(lightService.rId)
+          .subscribe((status) =>
+            console.log(
+              "status of " + this.device?.productData.humanName,
+              status,
+            ),
+          );
       }
     }
   }
