@@ -1,8 +1,8 @@
 import { ColorStatus } from "./color-status.dto";
 import { ColorTemperature } from "./color-temperature.dto";
 import { DeviceMetadata } from "./device-metadata.dto";
-import { DeviceService } from "./device-service.dto";
 import { Dimming } from "./dimming.dto";
+import { HueReference } from "./hue-reference.dto";
 import { LightDynamics } from "./light-dynamics.dto";
 import { LightEffects } from "./light-effects.dto";
 import { LightGradient } from "./light-gradient.dto";
@@ -27,7 +27,7 @@ export interface LightStatus {
   on: {
     on: boolean;
   };
-  owner: DeviceService;
+  owner: HueReference;
   powerup: unknown;
   productData: {
     function: string;

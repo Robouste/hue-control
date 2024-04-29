@@ -1,6 +1,6 @@
 import { Device } from "@common/dtos";
 import { DeviceEntity } from "src/entities";
-import { DeviceServiceMapper } from "./device-service.mapper";
+import { DeviceServiceMapper } from "./hue-reference.mapper";
 import { ProductDataMapper } from "./product-data.mapper";
 
 export class DeviceMapper {

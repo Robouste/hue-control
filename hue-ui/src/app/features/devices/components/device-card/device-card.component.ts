@@ -25,15 +25,15 @@ export class DeviceCardComponent implements OnInit {
 
   public ngOnInit(): void {
     if (this.device) {
+      console.log("device", this.device);
       this.deviceIcon = iconMapping[this.device.productData.humanName];
 
       const lightService = this.device.services.find(
-        (service) => service.rType === "light",
+        (service) => service.type === "light",
       );
 
       if (lightService) {
-        this._lightService.getStatus(lightService.rId).subscribe((status) => {
-          console.log("color of " + this.device?.productData.humanName, status);
+        this._lightService.getStatus(lightService.id).subscribe((status) => {
           if (status.on.on) {
             this.lightColor = status.color.rgb;
           }

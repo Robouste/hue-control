@@ -1,8 +1,8 @@
 import { ColorStatusEntity } from "./color-status.entity";
 import { ColorTemperatureEntity } from "./color-temperature.entity";
 import { DeviceMetadataEntity } from "./device-metadata.entity";
-import { DeviceServiceEntity } from "./device-service.entity";
 import { DimmingEntity } from "./dimming.entity";
+import { HueReferenceEntity } from "./hue-reference.entity";
 import { LightDynamicsEntity } from "./light-dynamics.entity";
 import { LightEffectsEntity } from "./light-effects.entity";
 import { LightGradientEntity } from "./light-gradient.entity";
@@ -27,7 +27,7 @@ export interface LightStatusEntity {
   on: {
     on: boolean;
   };
-  owner: DeviceServiceEntity;
+  owner: HueReferenceEntity;
   powerup: unknown;
   product_data: {
     function: string;

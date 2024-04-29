@@ -1,11 +1,11 @@
 import { DeviceMetadata } from "./device-metadata.dto";
-import { DeviceService } from "./device-service.dto";
+import { HueReference } from "./hue-reference.dto";
 import { ProductData } from "./product-data.dto";
 
 export interface Device {
   id: string;
   productData: ProductData;
   metadata: DeviceMetadata;
-  services: DeviceService[];
+  services: HueReference[];
   raw: unknown;
 }
