@@ -12,7 +12,7 @@ export class LightService {
 
   public getStatus(serviceId: string): Observable<LightStatus> {
     return this._queue.add(
-      this._http.get<LightStatus>(`light-status/${serviceId}`),
+      this._http.get<LightStatus>(`light/status/${serviceId}`),
     );
   }
 }

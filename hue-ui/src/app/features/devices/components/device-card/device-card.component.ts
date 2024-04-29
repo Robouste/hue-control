@@ -25,7 +25,9 @@ export class DeviceCardComponent implements OnInit {
 
   public ngOnInit(): void {
     if (this.device) {
-      console.log("device", this.device);
+      if (this.device.productData.humanName === "Small bulb") {
+        console.log("device", this.device);
+      }
       this.deviceIcon = iconMapping[this.device.productData.humanName];
 
       const lightService = this.device.services.find(

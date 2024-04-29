@@ -3,7 +3,7 @@ import { ConfigService } from "@nestjs/config";
 import axios from "axios";
 import { readFileSync } from "fs";
 import { Agent } from "https";
-import { ApiConstants } from "src/api.constants";
+import { ApiConstants } from "src/core/api.constants";
 import { PeerCertificate } from "tls";
 
 export const axiosFactory: Provider = {

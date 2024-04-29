@@ -1,7 +1,8 @@
+import { LightArchetype } from "@common/types";
 import { ColorStatus } from "./color-status.dto";
 import { ColorTemperature } from "./color-temperature.dto";
-import { DeviceMetadata } from "./device-metadata.dto";
 import { Dimming } from "./dimming.dto";
+import { HueMetadata } from "./hue-metadata.dto";
 import { HueReference } from "./hue-reference.dto";
 import { LightDynamics } from "./light-dynamics.dto";
 import { LightEffects } from "./light-effects.dto";
@@ -22,7 +23,7 @@ export interface LightStatus {
   id: string;
   id_v1: string;
   identify: unknown;
-  metadata: DeviceMetadata;
+  metadata: HueMetadata<LightArchetype>;
   mode: string;
   on: {
     on: boolean;

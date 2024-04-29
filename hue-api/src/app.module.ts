@@ -1,14 +1,14 @@
 import { Module } from "@nestjs/common";
-import { ConfigModule } from "@nestjs/config";
-import { ApiConstants } from "./api.constants";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { axiosFactory } from "./core/axios.factory";
+import { AxiosModule } from "./core";
+import { DeviceModule } from "./modules/device/device.module";
+import { LightModule } from "./modules/light/light.module";
+import { RoomModule } from "./modules/room/room.module";
 
 @Module({
-  imports: [ConfigModule.forRoot()],
+  imports: [AxiosModule, RoomModule, LightModule, DeviceModule],
   controllers: [AppController],
-  providers: [AppService, axiosFactory],
-  exports: [ApiConstants.axiosInjectionToken],
+  providers: [AppService],
 })
 export class AppModule {}

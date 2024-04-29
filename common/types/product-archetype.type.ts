@@ -1,12 +1,3 @@
-/**
- * candle_bulb => small bulb
- * sultan_bulb => big bulb
- * ceiling_round => Hue infuse (ceiling light)
- * hue_play => Hue play light bar (goodies light)
- * unknown_archetype => dimmers and sensors fall into this type
- * floor_shade => Vertical light
- */
-
 export type ProductArchetype =
   | "hue_lightstrip"
   | "candle_bulb"

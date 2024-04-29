@@ -1,6 +1,6 @@
 import { Device } from "@common/dtos";
 import { DeviceEntity } from "src/entities";
-import { DeviceServiceMapper } from "./hue-reference.mapper";
+import { HueReferenceMapper } from "./hue-reference.mapper";
 import { ProductDataMapper } from "./product-data.mapper";
 
 export class DeviceMapper {
@@ -10,7 +10,7 @@ export class DeviceMapper {
       metadata: entity.metadata,
       productData: ProductDataMapper.toDto(entity.product_data),
       services: entity.services.map((service) =>
-        DeviceServiceMapper.toDto(service),
+        HueReferenceMapper.toDto(service),
       ),
       raw: entity,
     };

@@ -20,6 +20,7 @@
     "strict": true,
     "paths": {
       "@common/*": ["../common/*"],
+      "@core/*": ["./src/core/*"],
       "@entities/*": ["./src/entities/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@mappers/*": ["./src/mappers/*"]

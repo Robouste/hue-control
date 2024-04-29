@@ -1,7 +1,12 @@
 <hue-page-title [title]="title" [icon]="icons.devices" />
 
-<div class="device-list">
-  @for (device of devices$ | async; track device) {
-    <hue-device-card [device]="device" />
-  }
-</div>
+@for (room of roomsAndDevices$ | async; track room) {
+  <h3>
+    {{ room.name }}
+  </h3>
+  <div class="device-list">
+    @for (device of room.devices; track $index) {
+      <hue-device-card [device]="device" />
+    }
+  </div>
+}

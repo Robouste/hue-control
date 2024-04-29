@@ -1,7 +1,7 @@
 import { LightStatus } from "@common/dtos";
 import { LightStatusEntity } from "@entities/light-status.entity";
 import { xyToRgb } from "@helpers/xy-to-rgb.function";
-import { DeviceServiceMapper } from "./hue-reference.mapper";
+import { HueReferenceMapper } from "./hue-reference.mapper";
 
 export class LightStatusMapper {
   public static toDto(entity: LightStatusEntity): LightStatus {
@@ -53,7 +53,7 @@ export class LightStatusMapper {
       metadata: entity.metadata,
       mode: entity.mode,
       on: entity.on,
-      owner: DeviceServiceMapper.toDto(entity.owner),
+      owner: HueReferenceMapper.toDto(entity.owner),
       powerup: entity.powerup,
       productData: entity.product_data,
     };
